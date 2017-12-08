@@ -1,0 +1,35 @@
+* Overview
+
+Butterfly is a tool that can generate stubs from diagrams. For now, the main
+focus is on generating portals from use case diagrams.
+
+** How it works
+
+You invoke Butterfly giving it a diagram, and it will give you a set of
+interfaces and programs that call those interfaces. You can then fill in the
+interfaces to complete the program.
+
+** Use cases
+
+The current focus is to create a tool that can be used to generate portals.
+
+#+BEGIN_SRC plantuml :file tool.usecase.png
+title Butterfly
+
+actor :Programmer: as P
+
+usecase (Generate portal from use case diagram) as GP
+
+P -- GP
+#+END_SRC
+
+#+RESULTS:
+[[file:tool.usecase.png]]
+
+** Components
+
+Butterfly consists of two component groups: the tool and the runtime support
+libraries. The tool is an executable that turns diagrams into code, and the
+runtime support libraries are linked to and invoked by the generated code.
+
+The current focus is to generate PureScript code.

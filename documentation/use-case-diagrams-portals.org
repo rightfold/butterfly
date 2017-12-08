@@ -1,0 +1,45 @@
+* Use case diagrams and portals
+
+A use case diagram is an overview of actors and interactions of a system. It
+depicts which actors can interact with the system in which manners. From a use
+case diagram one can generate a portal, which is a screen that guides the user
+through the various possible system interactions.
+
+** Example use case diagram and portal
+
+This section goes through an example of what a use case diagram and a portal may
+look like. Consider the following use case diagram.
+
+#+BEGIN_SRC plantuml :file journal.uc.png
+title Journal
+
+actor :Administrator: as A
+actor :Subscriber: as S
+
+usecase (Ban subscriber) as BS
+usecase (Post comment) as PC
+
+A -|> S
+
+A -- BS
+
+S -- PC
+#+END_SRC
+
+#+RESULTS:
+[[file:journal.uc.png]]
+
+From this diagram, the following value would be generated. The example is in
+PureScript, but other languages may be targeted as well.
+
+#+BEGIN_SRC purescript
+journal
+  :: forall f
+   . { banSubscriber :: Button f
+     , postComment   :: Button f }
+  -> Portal f
+journal = {- implementation provided -}
+#+END_SRC
+
+From this value, various objects could be generated at runtime, among which
+could be a user interface.
