@@ -1,1 +1,3 @@
 /tool/target
+/runtime-support-libraries/purescript/.psc-package
+/runtime-support-libraries/purescript/output
