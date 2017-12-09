@@ -35,8 +35,8 @@ PureScript, but other languages may be targeted as well.
 #+BEGIN_SRC purescript
 journal
   :: forall f
-   . { banSubscriber :: Button f
-     , postComment   :: Button f }
+   . { banSubscriber :: f Unit
+     , postComment :: f Unit }
   -> Portal f
 journal = {- implementation provided -}
 #+END_SRC

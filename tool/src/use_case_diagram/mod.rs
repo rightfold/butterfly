@@ -110,6 +110,16 @@ impl UseCaseDiagram {
         use_case_id
     }
 
+    /// Get the actor with the given identifier.
+    pub fn actor(&self, actor_id: ActorId) -> Option<&Actor> {
+        self.actors.get(&actor_id)
+    }
+
+    /// Get the use case with the given identifier.
+    pub fn use_case(&self, use_case_id: UseCaseId) -> Option<&UseCase> {
+        self.use_cases.get(&use_case_id)
+    }
+
     /// All actors in this use case diagram.
     pub fn actors(&self) -> Actors {
         self.actors.iter().map(|(&k, v)| (k, v))
@@ -248,3 +258,5 @@ mod tests {
                    vec![(actor_id, use_case_id)]);
     }
 }
+
+pub mod code_generation;
