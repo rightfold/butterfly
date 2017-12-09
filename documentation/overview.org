@@ -32,4 +32,6 @@ Butterfly consists of two component groups: the tool and the runtime support
 libraries. The tool is an executable that turns diagrams into code, and the
 runtime support libraries are linked to and invoked by the generated code.
 
+The tool is written in Rust.
+
 The current focus is to generate PureScript code.
