@@ -3,8 +3,13 @@
     "set": "psc-0.11.7",
     "source": "https://github.com/purescript/package-sets.git",
     "depends": [
+        "arrays",
+        "halogen",
         "lists",
+        "maybe",
         "prelude",
-        "sets"
+        "profunctor-lenses",
+        "sets",
+        "transformers"
     ]
 }
